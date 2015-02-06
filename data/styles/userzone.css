@@ -1,0 +1,66 @@
+
+#h-ucp.compact #u-nick {
+  top: 0;
+}
+
+#h-ucp.compact > #u-meta {
+  display: none;
+}
+
+#h-popup.compact {
+  box-shadow: 2px 2px 3px 0 rgba(0,0,0,0.3);
+}
+
+#h-popup.h-popup-user.compact {
+  width: 260px !important;
+}
+
+#h-popup.compact #h-p-user {
+  margin: 60px 0 auto !important;
+}
+
+#h-popup.compact #h-p-user div {
+  margin: 0 !important;
+  border: 0 !important;
+  padding: 0 13px 0 13px;
+}
+
+#h-popup.compact #h-p-user div a {
+  border: 1px solid #999;
+  border-bottom: 0px;
+  display: block !important;
+  padding-top: 0 !important;
+  line-height: 30px;
+  width: auto !important;
+  height: 30px !important;
+  background-size: 30px !important;
+}
+
+#h-popup.compact #h-p-user div:last-child a:last-child {
+  border-bottom: 1px solid #999;
+}
+
+#h-popup.compact #h-p-options {
+  height: auto;
+  padding: 8px 0;
+  margin-top: 3px;
+}
+
+#h-popup.compact #h-p-options a {
+  display: block;
+  line-height: 12px;
+}
+
+#h-popup.compact #u-meta {
+  position: absolute;
+  max-width: 200px;
+  right: 0; top: 0;
+  margin: 10px 0 0 0;
+  text-align: right;
+}
+#h-popup.compact #u-meta a {
+  color: #999;
+}
+#h-popup.compact #u-meta a:hover {
+  color: #ff7f00;
+}

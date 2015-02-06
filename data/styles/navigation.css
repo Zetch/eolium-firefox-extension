@@ -1,0 +1,111 @@
+
+
+#menu {
+  background-color: rgba(0, 0, 0, 0.1);
+  margin-bottom: 25px;
+}
+
+#menu a {
+  font-size: 13px !important;
+}
+#menu a span, .popup-navigation a span {
+  display: inline-block;
+  vertical-align: middle;
+  width: 7px;
+  height: 4px;
+  background: url(data:image/gif;base64,R0lGODlhBwAEAIABAGZmZgAAACH5BAEAAAEALAAAAAAHAAQAAAIIhA+BGWoNWSgAOw==) no-repeat right;
+  transition: all .1s linear;
+  margin-top: -2px;
+}
+#menu a.ltr span, .popup-navigation.rtl a span {
+  margin-right: 5px;
+}
+#menu a.rtl span, .popup-navigation.ltr a span {
+  margin-left: 5px;
+}
+#menu a span.active, .popup-navigation a.active span {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+#menu a {
+  width: auto !important;
+  padding-left: 7px;
+  padding-right: 7px;
+}
+#menu a#menu-main {
+  width: 36px !important;
+}
+
+.popup-navigation, #popup-more, #popup-otras {
+  outline: 0;
+  display: block !important;
+  visibility: hidden;
+  position: absolute !important;
+  z-index: 99;
+  background: #fff;
+  top: 34px;
+  width: 165px !important;
+  padding: 20px 0 20px 0 !important;
+  max-height: 0px;
+  -webkit-transition: max-height 0.2s ease;
+          transition: max-height 0.2s ease;
+}
+.popup-navigation, #popup-main {
+  box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.2);
+}
+.popup-navigation.show, #popup-more.show, #popup-otras.show {
+  max-height: 400px;
+  visibility: visible;
+}
+
+.popup-navigation:before {
+  content: "";
+  position: absolute;
+  top: -10px;
+}
+.popup-navigation.rtl:before {
+  right: 0;
+  border-style: inset inset solid solid;
+  border-width: 0 0 10px 10px;
+  border-color: transparent transparent #fff transparent;
+}
+.popup-navigation.ltr:before {
+  left: 0;
+  border-style: solid inset inset solid;
+  border-width: 10px 0 0 10px;
+  border-color: transparent transparent transparent #fff;
+}
+
+.popup-navigation a {
+  display: block;
+  padding: 0 20px 0 20px;
+  width: 125px;
+  font-family: Oswald, sans-serif;
+  font-size: 15px;
+  color: #555 !important;
+  cursor: pointer;
+}
+
+#popup-more a:last-child {
+  margin-bottom: 0 !important;
+  font-size: 15px !important;
+}
+.popup-navigation .submenu {
+  display: none;
+  background-color: #eee;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  box-shadow: inset 0 3px 5px rgba(0,0,0,0.1);
+}
+.popup-navigation .submenu.show {
+  display: block;
+}
+.popup-navigation a:hover {
+  color: #ff7f00 !important;
+}
+.popup-navigation.ltr a {
+  text-align: left;
+}
+.popup-navigation.rtl a {
+  text-align: right;
+}

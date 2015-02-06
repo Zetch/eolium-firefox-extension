@@ -1,0 +1,117 @@
+body {
+  margin: 0; padding: 0;
+  background-color: #E0E0E0;
+  font-family: sans-serif;
+  font-size: 0.8em;
+  margin-bottom: 20px;
+}
+
+.header {
+  color: white;
+  margin: 0; padding: 0;
+  background-color: #345829;
+  display: block;
+  width: 100%;
+  height: 60px;
+}
+
+.subheader {
+  background-color: rgba(0,0,0,0.1);
+  color: #464646;
+  margin: 0; padding: 0;
+  display: block;
+  width: 100%;
+  height: 45px;
+}
+
+button {
+  color: white;
+  font-size: 14px;
+  background-color: #ff7f00;
+  margin: 0;
+  margin-right: 2px;
+  border: 0;
+  vertical-align: middle;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.container {
+  width: 600px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.header .logo {
+  float: right;
+}
+
+.header h1 {
+  float: left;
+
+}
+
+.subheader h2 {
+  float: left;
+  clear: both;
+}
+
+.form {
+  background-color: #f2f2f2;
+  margin-top: 10px;
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+
+.form h4 {
+  line-height: 2em;
+  margin-bottom: 5px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.form .option {
+  display: block;
+  clear: both;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.actions {
+  padding-top: 15px;
+  display: block;
+  text-align: right;
+}
+
+.actions #status {
+  opacity: 0;
+  margin-right: 15px;
+  color: #999;
+  font-style: italic;
+  transition: opacity 0.5s;
+}
+
+.actions #status.show {
+  opacity: 1;
+}
+
+.form input[type="checkbox"] {
+  margin: 0;
+  padding: 0;
+  float: left;
+  display: block;
+  width: 12px;
+  margin: 2px 10px 2px 18px;
+}
+
+.form .option label {
+  display: block;
+}
+
+.form .option p.help {
+  margin: 5px 0 0 40px;
+  display: block;
+  color: #AAA;
+}

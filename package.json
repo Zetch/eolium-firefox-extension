@@ -1,0 +1,11 @@
+{
+  "name": "eolium-firefox-extension",
+  "title": "EOLium",
+  "id": "jid1-cn08aiGotnePAA",
+  "description": "Enable new features on ElOtroLado.net forums like live filtering, hide read threads or compact mode",
+  "author": "Nauzet Hernandez",
+  "license": "MPL 2.0",
+  "version": "0.5.1",
+  "homepage": "https://github.com/Zetch/eolium-firefox-extension",
+  "icon": "data/images/icon48.png"
+}

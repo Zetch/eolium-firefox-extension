@@ -1,0 +1,94 @@
+#header.compact {
+  position: initial;
+  height: 47px;
+  padding-top: 20px;
+}
+
+#header.compact #h-logo {
+  transform: scale(0.7);
+  width: 85px;
+  position: relative;
+  float: left;
+  top: initial;
+  left: initial;
+  margin-top: -20px;
+}
+
+#header.compact #h-menu {
+  position: initial;
+  float: left;
+  left: initial;
+  top: initial;
+}
+
+#header.compact #h-menu a {
+  width: initial;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+#header.compact #h-search {
+  display: block;
+  float: right;
+  margin-right: 15px;
+}
+
+#header.compact #h-search #s-selector-wrap,
+#header.compact #h-search #h-s-keywords,
+#header.compact #h-search input[type="submit"] {
+  float: left;
+  position: relative;
+  top: initial;
+  left: initial;
+}
+
+#header.compact #h-search input[type="submit"] {
+  margin-left: 2px;
+}
+
+#header.compact #h-social {
+  display: none;
+}
+
+#header.compact #h-ucp {
+  position: relative;
+  float: right;
+  top: initial;
+  left: initial;
+  margin-top: -7px;
+  width: initial;
+  margin-right: 15px;
+  max-width: 210px;
+}
+
+#header.compact #h-ucp > * {
+  position: relative;
+  float: left;
+  top: initial;
+  left: initial;
+  bottom: initial;
+  right: initial;
+}
+
+#header.compact #h-ucp > #u-meta {
+  margin-left: 52px;
+  clear: both;
+  margin-top: -13px;
+}
+ 
+#header.compact #h-ucp > #u-nick {
+  margin-left: 10px;
+  margin-top: 2px;
+  max-width: 155px;
+  height: 25px;
+  overflow: hidden;
+}
+#header.compact #h-ucp.compact > #u-nick {
+  margin-top: 10px;
+}
+
+#header.compact #h-popup {
+  position: absolute;
+  top: -5px;
+  left: -5px;
+}

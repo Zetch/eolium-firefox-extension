@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Preferencias EOLium</title>
+  <link rel="stylesheet" href="styles/options.css">
+</head>
+
+<body>
+  <div class="header">
+    <div class="container">
+      <img class="logo" src="images/icon48.png" alt="EOLium">
+      <h1>EOLium</h1>
+    </div>
+  </div>
+  <div class="subheader">
+    <div class="container">
+      <h2>Preferencias</h2>
+    </div>
+  </div>
+
+  <div class="container form">
+    <h4>Cabecera</h4>
+    <div class="option">
+      <input type="checkbox" id="eolium_header_compactMode">
+      <label for="eolium_header_compactMode">Modo compacto</label>
+      <p class="help">Reduce el tamaño y recoloca los menús, permitiendo aprovechar mejor el espacio en pantallas pequeñas</p>
+    </div>
+    
+    <h4>Zona de Usuario</h4>
+    <div class="option">
+      <input type="checkbox" id="eolium_userZone_compactMode">
+      <label for="eolium_userZone_compactMode">Modo compacto</label>
+      <p class="help">El Panel de Control de usuario se mostrará mas pequeño y como una lista</p>
+    </div>
+
+    <h4>Noticias</h4>
+    <div class="option">
+      <input type="checkbox" id="eolium_news_singleRow">
+      <label for="eolium_news_singleRow">Modo horizontal</label>
+      <p class="help">Muestra las noticias en una sola columna</p>
+    </div>
+
+    <h4>Foros</h4>
+    <div class="option">
+      <input type="checkbox" id="eolium_forums_hideRead">
+      <label for="eolium_forums_hideRead">Siempre ocultar leídos</label>
+      <p class="help">Define el estado por defecto del botón al cargar la página</p>
+    </div>
+    <div class="option">
+      <input type="checkbox" id="eolium_forums_hideClosed">
+      <label for="eolium_forums_hideClosed">Siempre ocultar cerrados</label>
+      <p class="help">Define el estado por defecto del botón al cargar la página</p>
+    </div>
+    <div class="option">
+      <input type="checkbox" id="eolium_forums_hideArchived">
+      <label for="eolium_forums_hideArchived">Siempre ocultar archivados</label>
+      <p class="help">Define el estado por defecto del botón al cargar la página</p>
+    </div>
+
+    <h4>Hilos</h4>
+    <div class="option">
+      <input type="checkbox" id="eolium_threads_compactMode">
+      <label for="eolium_threads_compactMode">Mantener el Modo Compacto</label>
+      <p class="help">Define el estado por defecto del botón al cargar la página</p>
+    </div>
+    <div class="option">
+      <input type="checkbox" id="eolium_threads_hideImages">
+      <label for="eolium_threads_hideImages">Siempre ocultar imágenes</label>
+      <p class="help">Define el estado por defecto del botón al cargar la página</p>
+    </div>
+
+    <h4>Otros</h4>
+    <div class="option">
+      <input type="checkbox" id="eolium_other_hideForumTitle">
+      <label for="eolium_other_hideForumTitle">Ocultar título del foro</label>
+      <p class="help">Elimina el título principal del foro (los "breadcumbs" superiores siguen mostrando en que foro estás)</p>
+    </div>
+    <div class="option">
+      <input type="checkbox" id="eolium_other_hideRelatedWikis">
+      <label for="eolium_other_hideRelatedWikis">Ocultar Wikis relacionados</label>
+      <p class="help">Elimina los enlaces a Wikis relacionados que se muestran sobre cada subforo</p>
+    </div>
+    <div class="option">
+      <input type="checkbox" id="eolium_other_hideGlobalAnnouces">
+      <label for="eolium_other_hideGlobalAnnouces">Ocultar Anuncions Globales</label>
+      <p class="help">Elimina los Anuncios Globales que se muestran sobre cada subforo</p>
+    </div>
+    <div class="option">
+      <input type="checkbox" id="eolium_other_hideRules">
+      <label for="eolium_other_hideRules">Ocultar reglas</label>
+      <p class="help">Elimina el banner superior con las reglas de uso de algunos subforos</p>
+    </div>
+  </div>
+
+  <div class="actions container">
+    <span id="status"></span>
+    <button id="savePreferences" href="#">Guardar</button>
+  </div>
+</body>
+</html>
