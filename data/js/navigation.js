@@ -137,7 +137,6 @@ var navigation = {
     'title': 'Otras Consolas',
     'align': 'rtl',
     'links': [
-      ['Multiplataforma', '/foro_otras-consolas-multiplataforma_22'],
       ['Wii',
         [
           ['General',        '/foro_wii-general_148',],
@@ -180,8 +179,13 @@ var navigation = {
       ],
       ['Xbox',         '/foro_otras-consolas-xbox_78'],
       ['GameCube',     '/foro_otras-consolas-gamecube_85'],
+      ['Dreamcast',    '/foro_otras-consolas-dreamcast_6'],
+      ['PlayStation',  '/foro_otras-consolas-playstation_81'],
+      ['GBA',          '/foro_otras-consolas-gba_66'],
+      ['Multiplataforma', '/foro_otras-consolas-multiplataforma_22'],
       ['Alternativas', '/foro_otras-consolas-consolas-alternativas_120'],
-      ['Clásicas',     '/foro_otras-consolas-consolas-clasicas_80']
+      ['Clásicas',     '/foro_otras-consolas-consolas-clasicas_80'],
+      ['Desarrollo',   'http://www.elotrolado.net/foro_otras-consolas-desarrollo_152']
     ]
   },
   'more': {
