@@ -1,6 +1,9 @@
 # EOLium para Mozilla Firefox
 Extension que añade algunas mejoras y aspectos visuales en los foros de ElOtroLado.net
 
+### 0.6
+* Añadida nueva opción para ignorar hilos y ocultarlos
+
 ### 0.5
 * Añadido sub-menus a los ménus desplegables
 
