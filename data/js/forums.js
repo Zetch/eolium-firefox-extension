@@ -1,4 +1,16 @@
 
+var fLink  = window.location.pathname;
+var fTitle = Array.prototype.reduce.call(
+  document.querySelectorAll('h2.breadcrumbs a span'), 
+  function(p, n) {
+    if (p.innerHTML === undefined) {
+      return p + " / " + n.innerHTML;
+    }
+    return p.innerHTML + " / " + n.innerHTML;
+  }
+);
+
+
 function setFilter(keyword, rows) {
   // Convert text before search
   var keywd = sanitizeText(keyword);
@@ -26,6 +38,51 @@ function setFilter(keyword, rows) {
   });
 }
 
+
+function loadIgnored(rows, manager, callback) {
+  var mToggle = document.createElement("a");
+  mToggle.setAttribute('href', '#');
+  mToggle.setAttribute('class', 'ignore-thread');
+  mToggle.innerHTML = '&times;';
+
+  Array.prototype.forEach.call(rows, function(row) {
+    // Add toggles
+    var threadlink = row.querySelector('dl > dt > a.topictitle');
+    var toggle = mToggle.cloneNode(true);
+
+    // Add event, toggle thread as ignored
+    toggle.addEventListener('click', function(e) {
+      e.preventDefault();
+      // Parse info
+      var tLink  = e.target.previousElementSibling.getAttribute('href');
+      var tTitle = e.target.previousElementSibling.getAttribute('title');
+
+      manager.toggle(fTitle, fLink, tTitle, tLink);
+      manager.save(function() {
+        e.target.classList.toggle('ignored');
+        console.info('Thread added');
+
+        // Toggle visibility if filter is active
+        if (!document.getElementById('buttonIgnored').classList.contains('active') &&
+            e.target.classList.contains('ignored')) {
+          e.target.parentElement.parentElement.parentElement.classList.toggle('hideIgnored');
+        }
+      });
+    });
+
+    // Check if it's ignored
+    if (manager.isThreadIgnored(fLink, threadlink.getAttribute('href'))) {
+      toggle.classList.add('ignored');
+    }
+
+    threadlink.parentElement.insertBefore(toggle, threadlink.nextElementSibling);
+  });
+
+  // Run callback
+  callback();
+}
+
+
 function toggleVisibility(toggle, hidden, rows) {
   // Check given toggle name
   var selector, className;
@@ -38,14 +95,16 @@ function toggleVisibility(toggle, hidden, rows) {
   } else if (toggle === 'archived') {
     selector = 'a.rowarch';
     className = 'hideArchived';
+  } else if (toggle === 'ignored') {
+    selector = 'dt a.ignored';
+    className = 'hideIgnored';
   } else {
     // Do nothing
     return;
   }
   // Toggle class on desired rows
   Array.prototype.forEach.call(rows, function(row) {
-    var isMatched = row.querySelector('dl > ' + selector);
-    if (isMatched) {
+    if (row.querySelector('dl > ' + selector)) {
       row.classList.toggle(className);
     }
   });
@@ -87,6 +146,11 @@ if (document.querySelector('#content-wrap #forum-wrap') &&
   buttonArchived.setAttribute('title', 'Archivados');
   buttonArchived.setAttribute('class', 'active');
 
+  var buttonIgnored = document.createElement('button');
+  buttonIgnored.setAttribute('id',    'buttonIgnored');
+  buttonIgnored.setAttribute('title', 'Ignorados');
+  buttonIgnored.setAttribute('class', 'active');
+
 
   // Add input filter event, append to page
   inputFilter.addEventListener('input', function(e) {
@@ -123,9 +187,24 @@ if (document.querySelector('#content-wrap #forum-wrap') &&
       toggleVisibility('archived', e.target.classList.toggle('active'), rows);
     });
 
+    // Load ignored threads
+    var manager = new IgnoredManager(preferences['eolium_forums_ignoredThreads']);
+
+    loadIgnored(rows, manager, function() {
+      console.log(preferences);
+      if (preferences['eolium_forums_hideIgnored']) {
+        toggleVisibility('ignored', buttonIgnored.classList.toggle('active'), rows);
+      }
+      buttonIgnored.addEventListener('click', function(e) {
+        e.preventDefault();
+        toggleVisibility('ignored', e.target.classList.toggle('active'), rows);
+      });
+    });
+
     // Append to page
     form.appendChild(buttonRead);
     form.appendChild(buttonClosed);
     form.appendChild(buttonArchived);
+    form.appendChild(buttonIgnored);
   });
 }

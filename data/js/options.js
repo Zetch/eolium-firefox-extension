@@ -1,3 +1,10 @@
+function toggleThreadsContainer(e) {
+  e.preventDefault();
+  var threads = document.getElementById('eolium_forums_ignoredThreads');
+  threads.classList.toggle('hide');
+  e.target.classList.toggle('open');
+}
+
 
 function savePreferences() {
   var toSave = {};
@@ -6,6 +13,7 @@ function savePreferences() {
   var inputs = document.querySelectorAll(".option input");
   Array.prototype.forEach.call(inputs, function(input) {
     var name = input.getAttribute('id');
+    if (name == 'eolium_forums_ignoredThreads') return;
     var value;
     if (input.type === "checkbox") {
       value = input.checked;
@@ -33,14 +41,23 @@ function loadPreferences(prefs) {
   for (name in preferences) {
     var input = document.getElementById(name);
     if (input) {
-      if (input.type === "checkbox") {
-        input.checked = preferences[name];
+      if (name !== 'eolium_forums_ignoredThreads') {
+        if (input.type === "checkbox") {
+          input.checked = preferences[name];
+        } else {
+          input.value = preferences[name];
+        }
       } else {
-        input.value = preferences[name];
+        var manager = new IgnoredManager(preferences[name]);
+        var tree = manager.buildHtml();
+        input.appendChild(tree);
       }
     }
   };
 }
+
+var toggleIgnored = document.getElementById('toggleIgnored');
+toggleIgnored.addEventListener('click', toggleThreadsContainer);
 
 // Load preferences on load
 self.port.on("preferencesLoaded", loadPreferences);
