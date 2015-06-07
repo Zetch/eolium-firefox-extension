@@ -1,8 +1,10 @@
 
 // Init
-self.port.on("preferencesLoaded", function(prefs) {
-  var preferences = JSON.parse(prefs);
+self.port.on("preferencesLoaded", 
 
+function(items) {
+
+  var preferences = JSON.parse(items);
   var userZone  = document.querySelector('#h-ucp');
   var userPopup = document.querySelector('#h-popup.h-popup-user');
 
@@ -31,5 +33,4 @@ self.port.on("preferencesLoaded", function(prefs) {
     logout.remove();
     userPopup.insertBefore(logout, userPopup.firstChild);
   }
-
 });

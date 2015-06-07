@@ -1,7 +1,10 @@
 
 // Init
-self.port.on("preferencesLoaded", function(prefs) {
-  var preferences = JSON.parse(prefs);
+self.port.on("preferencesLoaded",
+
+function(items) {
+
+  var preferences = JSON.parse(items);
 
   if (preferences['eolium_header_compactMode']) {
     var header = document.getElementById('header');
